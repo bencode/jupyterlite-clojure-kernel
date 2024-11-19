@@ -1,0 +1,7 @@
+node_modules/
+_output
+.ipynb_checkpoints
+venv/
+jupyterlite_clojure_kernel
+!jupyterlite-clojure-kernel/__init__.py
+.jupyterlite.doit.db

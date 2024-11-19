@@ -1,0 +1,32 @@
+[build-system]
+requires = [
+    "hatchling >=1.4.0",
+    "jupyterlab >=4.2.1,<4.3.0"
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "jupyterlite-clojure-kernel"
+version = "0.1.0"
+description = "Clojure kernel for JupyterLite powered by Sci"
+authors = [{ name = "bencode" }]
+keywords = ["jupyter", "jupyterlab", "jupyterlite", "clojure"]
+license = { text = "BSD-3-Clause" }
+requires-python = ">=3.8"
+classifiers = [
+    "Framework :: Jupyter",
+    "Framework :: Jupyter :: JupyterLab",
+    "Framework :: Jupyter :: JupyterLab :: 4",
+    "License :: OSI Approved :: BSD License",
+]
+dependencies = ["jupyterlite-core >=0.4.0,<0.5.0"]
+
+[project.urls]
+Source = "https://github.com/bencode/jupyterlite-clojure-kernel"
+
+[project.entry-points."jupyterlite.addon.v0"]
+jupyterlite_clojure_kernel = "jupyterlite_clojure_kernel:ClojureAddon"
+
+[tool.hatch.build.targets.wheel]
+include = ["./jupyterlite_clojure_kernel"]
+artifacts = ["jupyterlite_clojure_kernel"]

@@ -1,0 +1,67 @@
+{
+  "name": "jupyterlite-clojure-kernel",
+  "version": "0.1.0",
+  "description": "A Clojure kernel for JupyterLite using Sci",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlite",
+    "jupyterlite-extension"
+  ],
+  "homepage": "https://github.com/bencode/jupyterlab-clojure-kernel",
+  "bugs": {
+    "url": "https://github.com/bencode/jupyterlab-clojure-kernel/issues"
+  },
+  "license": "BSD-3-Clause",
+  "author": "bencode",
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bencode/jupyterlab-clojure-kernel.git"
+  },
+  "scripts": {
+    "build:lib": "tsc",
+    "build:labextension": "jupyter labextension build .",
+    "clean": "rimraf lib tsconfig.tsbuildinfo",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@jupyterlab/services": "^7.0.0",
+    "@jupyterlite/kernel": "^0.4.0",
+    "@jupyterlite/server": "^0.4.4"
+  },
+  "devDependencies": {
+    "@jupyterlab/builder": "^4.3.1",
+    "prettier": "^3.3.3",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.6.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "jupyterlab": {
+    "extension": true,
+    "outputDir": "./jupyterlite_clojure_kernel/labextension",
+    "sharedPackages": {
+      "@jupyterlite/kernel": {
+        "bundled": false,
+        "singleton": true
+      },
+      "@jupyterlite/server": {
+        "bundled": false,
+        "singleton": true
+      },
+      "@jupyterlite/contents": {
+        "bundled": false,
+        "singleton": true
+      }
+    }
+  },
+  "jupyterlite": {
+    "liteExtension": true
+  }
+}
