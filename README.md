@@ -1,3 +1,3 @@
 # jupyterlite-clojure-kernel
 
-An clojure kernel for JupyterLite.
+A Clojure Kernel for JupyterLite.
