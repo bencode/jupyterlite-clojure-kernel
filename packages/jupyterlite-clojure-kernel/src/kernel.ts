@@ -1,5 +1,6 @@
 import { KernelMessage } from '@jupyterlab/services'
 import { BaseKernel, IKernel } from '@jupyterlite/kernel'
+import sci from 'sci-npm'
 
 export class ClojureKernel extends BaseKernel implements IKernel {
   constructor(options: any) {
@@ -36,11 +37,12 @@ export class ClojureKernel extends BaseKernel implements IKernel {
     content: KernelMessage.IExecuteRequestMsg['content'],
   ): Promise<KernelMessage.IExecuteReplyMsg['content']> {
     const { code } = content
+    const result = sci.eval_string(code)
 
     this.publishExecuteResult({
       execution_count: this.executionCount,
       data: {
-        'text/plain': code,
+        'text/plain': String(result),
       },
       metadata: {},
     })

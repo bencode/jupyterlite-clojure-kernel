@@ -1,0 +1,14 @@
+{:source-paths
+ ["src"]
+ :dependencies
+ [[org.babashka/sci "0.7.39"]]
+ :builds
+ {:npm
+  {:target :npm-module
+   :output-dir "dist"
+   :entries [sci-npm.core]
+   :js-options
+   {:resolve {"process" {:target :npm
+                         :require "process/browser"}}}
+   :build-hooks [(shadow.cljs.build-report/hook
+                  {:output-to "report.html"})]}}}

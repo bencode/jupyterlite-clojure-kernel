@@ -7,7 +7,7 @@ import { ClojureKernel } from './kernel'
 // import jsLogo64 from '../style/icons/logo-64x64.png';
 
 const kernel: JupyterLiteServerPlugin<void> = {
-  id: '@jupyterlite/clojure-kernel-extension:kernel',
+  id: 'clojure-kernel-extension:kernel',
   autoStart: true,
   requires: [IKernelSpecs],
   activate: (app: JupyterLiteServer, kernelspecs: IKernelSpecs) => {
@@ -18,8 +18,8 @@ const kernel: JupyterLiteServerPlugin<void> = {
         language: 'clojure',
         argv: [],
         resources: {
-          // 'logo-32x32': jsLogo32,
-          // 'logo-64x64': jsLogo64,
+          'logo-32x32': '',
+          'logo-64x64': '',
         },
       },
       create: async (options: IKernel.IOptions): Promise<IKernel> => {
