@@ -37,20 +37,39 @@ export class ClojureKernel extends BaseKernel implements IKernel {
     content: KernelMessage.IExecuteRequestMsg['content'],
   ): Promise<KernelMessage.IExecuteReplyMsg['content']> {
     const { code } = content
-    const result = sci.eval_string(code)
+    try {
+      const result = sci.eval_string(code)
 
-    this.publishExecuteResult({
-      execution_count: this.executionCount,
-      data: {
-        'text/plain': String(result),
-      },
-      metadata: {},
-    })
+      this.publishExecuteResult({
+        execution_count: this.executionCount,
+        data: {
+          'text/plain': String(result),
+        },
+        metadata: {},
+      })
 
-    return {
-      status: 'ok',
-      execution_count: this.executionCount,
-      user_expressions: {},
+      return {
+        status: 'ok',
+        execution_count: this.executionCount,
+        user_expressions: {},
+      }
+    } catch (e) {
+      const error = e as Error
+      const evalue = error.message || String(e)
+      const traceback = error?.stack?.split('\n') || []
+      this.publishExecuteError({
+        ename: 'Evaluation Error',
+        evalue,
+        traceback,
+      })
+
+      return {
+        status: 'error',
+        execution_count: this.executionCount,
+        ename: 'Evaluation Error',
+        evalue,
+        traceback: traceback,
+      }
     }
   }
 
