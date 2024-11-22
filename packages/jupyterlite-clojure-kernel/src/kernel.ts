@@ -10,7 +10,7 @@ export class ClojureKernel extends BaseKernel implements IKernel {
   async kernelInfoRequest(): Promise<KernelMessage.IInfoReplyMsg['content']> {
     return {
       implementation: 'Clojure',
-      implementation_version: '0.1.0',
+      implementation_version: '0.1.1',
       language_info: {
         codemirror_mode: {
           name: 'clojure',
