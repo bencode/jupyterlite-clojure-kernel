@@ -1,14 +1,12 @@
 # JupyterLite Clojure Kernel
 
-A Clojure kernel for JupyterLite powered by sci (Small Clojure Interpreter), enabling Clojure code execution directly in the browser.
+A Clojure kernel for JupyterLite powered by [sci](https://github.com/babashka/sci) —— Small Clojure Interpreter, enabling Clojure code execution directly in the browser.
 
 ## Features
 
 - Browser-based Clojure REPL
 - No server-side dependencies
 - Core Clojure functions support
-- Data structure manipulation
-- Interactive code evaluation
 
 ## Installation
 
@@ -34,10 +32,6 @@ pip install jupyterlite-clojure-kernel-canary
 ;; Data structures
 (def data {:name "Alice" :scores [98 92 85]})
 ```
-
-## Development
-
-See [GitHub repository](https://github.com/bencode/jupyterlite-clojure-kernel) for development instructions.
 
 ## License
 
