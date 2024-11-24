@@ -22,16 +22,7 @@ pip install jupyterlite-clojure-kernel-canary
 
 ## Examples
 
-```clojure
-;; Basic calculations
-(+ 1 2 3)
-
-;; Define functions
-(defn square [x] (* x x))
-
-;; Data structures
-(def data {:name "Alice" :scores [98 92 85]})
-```
+[using-clojure-in-jupyterlite](https://bencode.github.io/code/notebooks/index.html?path=using-clojure-in-jupyterlite.ipynb)
 
 ## License
 
