@@ -1,6 +1,6 @@
 # JupyterLite Clojure Kernel
 
-A Clojure kernel for JupyterLite powered by [sci](https://github.com/babashka/sci) —— Small Clojure Interpreter, enabling Clojure code execution directly in the browser.
+A Clojure kernel for JupyterLite using [sci](https://github.com/babashka/sci) (Small Clojure Interpreter), enabling Clojure code execution directly in the browser.
 
 ## Features
 
