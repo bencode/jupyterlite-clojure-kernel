@@ -20,6 +20,39 @@ pip install jupyterlite-clojure-kernel-canary
 2. Add the Clojure kernel
 3. Create a new notebook with Clojure kernel
 
+## Development
+
+### 1. build sci-npm
+
+``` shell
+cd packages/sci-npm
+pnpm install
+pnpm build
+```
+
+### 2. build kernel
+
+``` shell
+cd packages/jupyterlite-clojure-kernel
+pnpm install
+# pnpm watch # for develop
+pnpm build
+```
+
+### 3. serve jupyterlite
+
+``` shell
+# cd $projectroot
+pip install jupyterlab jupyterlite
+
+pnpm install
+pnpm dev:install
+pnpm dev:build
+
+python -m http.server --directory _output
+```
+
+
 ## Examples
 
 [Using Clojure in JupyterLite](https://bencode.github.io/code/notebooks/index.html?path=using-clojure-in-jupyterlite.ipynb)
