@@ -22,7 +22,7 @@ pip install jupyterlite-clojure-kernel-canary
 
 ## Examples
 
-[Using-Clojure-in-JupyterLite](https://bencode.github.io/code/notebooks/index.html?path=using-clojure-in-jupyterlite.ipynb)
+[Using Clojure in JupyterLite](https://bencode.github.io/code/notebooks/index.html?path=using-clojure-in-jupyterlite.ipynb)
 
 ## License
 
