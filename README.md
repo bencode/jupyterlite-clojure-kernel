@@ -1,6 +1,10 @@
 # JupyterLite Clojure Kernel
 
-A Clojure kernel for JupyterLite using [sci](https://github.com/babashka/sci) (Small Clojure Interpreter), enabling Clojure code execution directly in the browser.
+A Clojure kernel for JupyterLite powered by [sci](https://github.com/babashka/sci) —— Small Clojure Interpreter, enabling Clojure code execution directly in the browser.
+
+## Eamples
+
+- [Using Clojure in JupyterLite](https://www.qijun.io/notebooks/index.html?path=using-clojure-in-jupyterlite.ipynb)
 
 ## Features
 
@@ -44,7 +48,7 @@ pnpm build
 ``` shell
 # cd $projectroot
 pip install jupyterlab jupyterlite
-
+t
 pnpm install
 pnpm dev:install
 pnpm dev:build
@@ -55,7 +59,16 @@ python -m http.server --directory _output
 
 ## Examples
 
-[Using Clojure in JupyterLite](https://bencode.github.io/code/notebooks/index.html?path=using-clojure-in-jupyterlite.ipynb)
+```clojure
+;; Basic calculations
+(+ 1 2 3)
+
+;; Define functions
+(defn square [x] (* x x))
+
+;; Data structures
+(def data {:name "Alice" :scores [98 92 85]})
+```
 
 ## License
 
